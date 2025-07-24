@@ -94,7 +94,7 @@ class TestGetPricing:
 
     @pytest.mark.asyncio
     async def test_get_pricing_with_filters(self, mock_boto3, mock_context):
-        """Test getting pricing with filters using PricingFilters model."""
+        """Test getting pricing with filters."""
         # Create filters using the Pydantic models
         filters = [
             PricingFilter(Field='instanceType', Value='t3.medium'),
@@ -123,8 +123,8 @@ class TestGetPricing:
         assert 'regionCode' in filter_fields  # Always added by the function
 
     @pytest.mark.asyncio
-    async def test_pricing_filters_model_validation(self):
-        """Test that PricingFilters model validates correctly."""
+    async def test_pricing_filter_model_validation(self):
+        """Test that PricingFilter model validates correctly."""
         # Test valid filter creation
         valid_filter = PricingFilter(Field='instanceType', Value='t3.medium')
         assert valid_filter.field == 'instanceType'
