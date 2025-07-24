@@ -87,9 +87,7 @@ ATTRIBUTE_NAMES_FIELD = Field(
     ..., description='List of attribute names (e.g., ["instanceType", "location", "storageClass"])'
 )
 
-FILTERS_FIELD = Field(
-    default_factory=list, description='Optional list of filters to apply to the pricing query'
-)
+FILTERS_FIELD = Field(None, description='Optional list of filters to apply to the pricing query')
 
 GET_PRICING_MAX_ALLOWED_CHARACTERS_FIELD = Field(
     100000,

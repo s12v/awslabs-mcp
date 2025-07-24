@@ -397,7 +397,7 @@ async def get_pricing(
     """
     # Handle Pydantic Field objects when called directly (not through MCP framework)
     if isinstance(filters, FieldInfo):
-        filters = filters.default_factory()
+        filters = filters.default
     if isinstance(max_allowed_characters, FieldInfo):
         max_allowed_characters = max_allowed_characters.default
     if isinstance(output_options, FieldInfo):
