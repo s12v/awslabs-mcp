@@ -140,11 +140,6 @@ class TestGetPricing:
         assert filter_dict['Value'] == 't3.medium'
         assert filter_dict['Type'] == 'EQUALS'
 
-        # Test PricingFilters container
-        filters = [valid_filter]
-        assert len(filters) == 1
-        assert filters[0].field == 'instanceType'
-
     @pytest.mark.asyncio
     async def test_new_filter_types_validation(self):
         """Test that new filter types work correctly."""
